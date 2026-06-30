@@ -9,22 +9,84 @@ export default function Plan() {
 
     const plans = {
         Local: [
-            "Unlimited Saver",
-            "Unlimited Saver",
-            "Unlimited Saver",
-            "Unlimited Saver",
+            {
+                title: "Unlimited Plus",
+                oldPrice: "$45.00/mo",
+                price: "$16.33",
+                badge: "$49 for 3 months • Save $86",
+                features: [
+                    "Unlimited Data",
+                    "30GB Premium 5G Data",
+                    "Extra 5GB Promotional Data",
+                    "OnePool™ shared data across U.S. & China",
+                    "Unlimited US Calls & Texts",
+                    "Free International Calls & Texts to 229+ Countries",
+                ],
+            },
+            {
+                title: "Unlimited Plan",
+                oldPrice: "$35.00/mo",
+                price: "$13.00",
+                badge: "$39 for 3 Months • Save $66",
+                features: [
+                    "Unlimited Data",
+                    "15GB Premium 5G Data",
+                    "Extra 5GB Promotional Data",
+                    "OnePool™ shared data across U.S. & China",
+                    "Unlimited US Calls & Texts",
+                    "Free International Calls & Texts to 229+ Countries",
+                ],
+            },
+            {
+                title: "Starter",
+                price: "$25.00",
+                features: [
+                    "6GB of 5G Data",
+                    "Unlimited US Talk & Text",
+                    "Free Unlimited Calls & Texts to China & 229+ Countries",
+                ],
+            },
+            {
+                title: "Lite",
+                price: "$15.00",
+                features: [
+                    "3GB of 5G Data",
+                    "Unlimited US Talk & Text",
+                ],
+            },
         ],
+
         Regional: [
-            "Regional Basic",
-            "Regional Plus",
-            "Regional Max",
-            "Regional Unlimited",
+            {
+                title: "Regional Plus",
+                price: "$20.00",
+                features: [
+                    "10GB Premium Data",
+                    "Unlimited Regional Calls",
+                    "Free SMS",
+                ],
+            },
+            {
+                title: "Regional Max",
+                price: "$30.00",
+                features: [
+                    "25GB Premium Data",
+                    "Unlimited Calls",
+                    "Free International SMS",
+                ],
+            },
         ],
+
         Global: [
-            "Global Starter",
-            "Global Plus",
-            "Global Pro",
-            "Global Unlimited",
+            {
+                title: "Global Unlimited",
+                price: "$50.00",
+                features: [
+                    "Unlimited Global Data",
+                    "Unlimited Calls",
+                    "Worldwide Roaming",
+                ],
+            },
         ],
     };
 
@@ -75,31 +137,57 @@ export default function Plan() {
                 {/* Scrollable Plans */}
                 <div className="mt-8 flex-1 overflow-y-auto pb-4">
                     <div className="grid grid-cols-2 gap-4">
-                        {plans[activeTab].map((name, index) => (
+                        {plans[activeTab].map((plan, index) => (
                             <div
                                 key={index}
-                                className="rounded-md border border-gray-300 bg-white shadow-lg px-3 py-4 text-center"
+                                className="relative mt-5 rounded-2xl border border-yellow-400 bg-white shadow-lg px-4 pt-10 pb-4"
                             >
-                                <div className="text-(--primary-color) font-bold">
-                                    <span className="align-top text-sm">$</span>
-                                    <span className="text-4xl">35</span>
-                                    <span className="text-xs">/mo</span>
+                                {/* Badge */}
+                                {plan.badge && (
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-yellow-400 px-5 py-1 text-[11px] font-bold text-black shadow">
+                                        {plan.badge}
+                                    </div>
+                                )}
+
+                                {/* Title */}
+                                <h3 className="text-center text-xl font-semibold text-red-400">
+                                    {plan.title}
+                                </h3>
+
+                                {/* Old Price */}
+                                {plan.oldPrice && (
+                                    <p className="mt-2 text-center text-2xl font-semibold text-gray-400 line-through">
+                                        {plan.oldPrice}
+                                    </p>
+                                )}
+
+                                {/* Price */}
+                                <div className="mt-1 text-center text-(--primary-color)">
+                                    <span className="text-4xl font-semibold">
+                                        {plan.price}
+                                    </span>
+                                    <span className="text-sm font-semibold">/mo</span>
                                 </div>
 
-                                <p className="mt-2 text-[9px] font-semibold leading-tight">
-                                    30GB/mo. at max 3 Mbps, then speeds slowed to max 1.5 Mbps.
-                                </p>
+                                {/* Features */}
+                                <ul className="mt-5 space-y-2 text-xs text-gray-700">
+                                    {plan.features.map((feature, i) => (
+                                        <li key={i} className="flex items-start text-sm gap-2">
+                                            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-(--primary-color)" />
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
 
-                                <h3 className="mt-3 text-sm font-bold">{name}</h3>
-
+                                {/* Button */}
                                 <button
-                                    onClick={() => setSelectedPlan(name)}
-                                    className="mt-3 rounded-full bg-(--primary-color) text-white text-[9px] font-bold px-5 py-1"
+                                    onClick={() => setSelectedPlan(plan)}
+                                    className="mt-6 w-full rounded-lg bg-(--primary-color) py-2 text-sm font-semibold text-white transition hover:opacity-90"
                                 >
                                     View Details
                                 </button>
 
-                                <p className="mt-1 text-[8px]">
+                                <p className="mt-2 text-center text-[10px] text-gray-500">
                                     Taxes & fees extra
                                 </p>
                             </div>
@@ -134,10 +222,10 @@ export default function Plan() {
                     onClick={() => setSelectedPlan(null)}
                 >
                     <div
-                        className="relative w-full max-w-[460px] rounded-lg bg-white text-center"
+                        className="relative w-full max-w-115 rounded-lg bg-white text-center"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="relative w-full max-w-[460px] rounded-lg bg-white px-6 py-8 text-center">
+                        <div className="relative w-full max-w-115 rounded-lg bg-white px-6 py-8 text-center">
                             <button
                                 onClick={() => setSelectedPlan(null)}
                                 className="absolute right-5 top-4 text-black text-xl font-bold"
@@ -145,23 +233,41 @@ export default function Plan() {
                                 ×
                             </button>
 
+                            {selectedPlan.oldPrice && (
+                                <p className="text-sm text-gray-400 line-through">
+                                    {selectedPlan.oldPrice}
+                                </p>
+                            )}
+
                             <div className="text-(--primary-color) font-bold">
-                                <span className="align-top text-xl">$</span>
-                                <span className="text-5xl">35</span>
+                                <span className="text-5xl">{selectedPlan.price}</span>
                                 <span className="text-sm">/mo</span>
                             </div>
+
+                            {selectedPlan.badge && (
+                                <div className="mx-auto mt-3 inline-block rounded bg-red-500 px-3 py-1 text-xs font-semibold text-white">
+                                    {selectedPlan.badge}
+                                </div>
+                            )}
 
                             <p className="mt-2 text-[10px] text-black">
                                 Taxes & fees extra
                             </p>
 
                             <h2 className="mt-2 text-lg font-bold">
-                                {selectedPlan}<sup>SM</sup>
+                                {selectedPlan.title}<sup>SM</sup>
                             </h2>
 
-                            <ul className="mt-3 text-left text-sm list-disc pl-5">
-                                <li>30GB/mo. at max 3 Mbps, then speeds slowed to max 1.5 Mbps.</li>
-                                <li>T-Mobile Level Up<sup>SM</sup></li>
+                            <ul className="mt-5 space-y-3 text-left">
+                                {selectedPlan.features.map((feature, i) => (
+                                    <li
+                                        key={i}
+                                        className="flex items-start gap-2 text-sm"
+                                    >
+                                        <span className="mt-1 h-2 w-2 rounded-full bg-(--primary-color)" />
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
                             </ul>
 
                             <button className="mt-2 text-left block text-xs font-bold text-blue-600 underline">

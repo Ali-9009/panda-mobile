@@ -34,7 +34,7 @@ export default function RReview() {
 
                     <div className="rounded-md border border-gray-200 p-4">
                         <div className="flex gap-4">
-                            <div className="w-28 rounded bg-white shadow-md p-3 text-center flex-shrink-0">
+                            <div className="w-28 rounded bg-white shadow-md p-3 text-center shrink-0">
                                 <div className="text-(--primary-color) font-bold">
                                     <span className="text-xs align-top">$</span>
                                     <span className="text-3xl">35</span>
@@ -85,7 +85,7 @@ export default function RReview() {
                 </div>
             </section>
 
-            <div className="w-full max-w-[300px] mx-auto py-4">
+            <div className="w-full max-w-75 mx-auto py-4">
 
                 <div className="grid grid-cols-2 gap-3 mt-4">
                     <button
@@ -98,7 +98,7 @@ export default function RReview() {
 
                     <Link
                         to="/request"
-                        className="h-10 rounded-full bg-[var(--primary-color)] text-white text-xs font-semibold flex items-center justify-center"
+                        className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                     >
                         Skip
                     </Link>

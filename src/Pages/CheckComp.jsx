@@ -35,14 +35,14 @@ export default function CheckComp() {
                     </h2>
                 </div>
 
-                <div className="mt-8 w-full max-w-[300px] rounded-2xl border border-gray-100 bg-white px-4 py-5 shadow-xl">
+                <div className="mt-8 w-full max-w-75 rounded-2xl border border-gray-100 bg-white px-4 py-5 shadow-xl">
                     <h3 className="text-xl font-bold text-(--primary-color)">*#06#</h3>
                     <p className="mt-1 text-xs text-gray-600">
                         Your IMEI number will appear on the screen
                     </p>
                 </div>
 
-                <div className="mt-6 w-full max-w-[300px] rounded-2xl border border-(--primary-color)/20 bg-[#fff0f7] p-6 shadow-sm">
+                <div className="mt-6 w-full max-w-75 rounded-2xl border border-(--primary-color)/20 bg-[#fff0f7] p-6 shadow-sm">
                     <p className="mb-3 text-[20px] font-bold uppercase tracking-widest text-gray-800">
                         CHECK YOUR DEVICE COMPATIBILITY
                     </p>
@@ -68,12 +68,12 @@ export default function CheckComp() {
             <img
                 src="/assets/bg-ele.png"
                 alt=""
-                className="pointer-events-none fixed -bottom-10 left-1/2 z-10 w-[520px] max-w-xl -translate-x-1/2"
+                className="pointer-events-none fixed -bottom-10 left-1/2 z-10 w-130 max-w-xl -translate-x-1/2"
             />
 
             {/* Fixed Bottom Buttons */}
             <div className="fixed bottom-0 left-1/2 z-60 w-full max-w-xl -translate-x-1/2 bg-black py-4">
-                <div className="mx-auto grid max-w-[300px] grid-cols-2 gap-3 px-4">
+                <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                     <button
                         type="button"
                         onClick={() => window.history.back()}
@@ -94,8 +94,8 @@ export default function CheckComp() {
 
             {/* Success Modal */}
             {showSuccess && (
-                <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 px-4">
-                    <div className="relative z-[1000] w-full max-w-[360px] rounded-3xl bg-white p-6 shadow-2xl">
+                <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/60 px-4">
+                    <div className="relative z-1000 w-full max-w-90 rounded-3xl bg-white p-6 shadow-2xl">
                         <div className="flex justify-center">
                             <div className="flex h-24 w-24 items-center justify-center rounded-full bg-(--primary-color)">
                                 <svg

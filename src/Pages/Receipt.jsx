@@ -61,7 +61,7 @@ export default function Receipt() {
 
             {/* Bottom Buttons */}
             <div className="px-6 pb-6 flex items-center gap-2">
-                <button className="w-10 h-10 rounded-full border border-black flex items-center justify-center flex-shrink-0">
+                <button className="w-10 h-10 rounded-full border border-black flex items-center justify-center shrink-0">
                     <Link to="/">
                         <ArrowLeft className="w-5 h-5" />
                     </Link>

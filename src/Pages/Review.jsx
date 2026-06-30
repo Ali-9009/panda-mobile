@@ -60,7 +60,7 @@ export default function Review() {
 
                     <div className="rounded-md border border-gray-200 p-4">
                         <div className="flex gap-4">
-                            <div className="w-28 rounded bg-white shadow-md p-3 text-center flex-shrink-0">
+                            <div className="w-28 rounded bg-white shadow-md p-3 text-center shrink-0">
                                 <div className="text-(--primary-color) font-bold">
                                     <span className="text-xs align-top">$</span>
                                     <span className="text-3xl">35</span>

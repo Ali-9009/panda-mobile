@@ -116,10 +116,10 @@ export default function Recharge() {
                     onClick={() => setSelectedPlan(null)}
                 >
                     <div
-                        className="relative w-full max-w-[460px] rounded-lg bg-white text-center"
+                        className="relative w-full max-w-115 rounded-lg bg-white text-center"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="relative w-full max-w-[460px] rounded-lg bg-white px-6 py-8 text-center">
+                        <div className="relative w-full max-w-115 rounded-lg bg-white px-6 py-8 text-center">
                             <button
                                 onClick={() => setSelectedPlan(null)}
                                 className="absolute right-5 top-4 text-black text-xl font-bold"
