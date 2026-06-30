@@ -38,7 +38,7 @@ export default function StartS() {
             </div>
 
             {/* Buttons */}
-            <div className="relative z-10 mt-10 w-full max-w-[300px] px-4 flex flex-col gap-3">
+            <div className="relative z-10 mt-10 w-full max-w-75 px-4 flex flex-col gap-3">
                 {menuItems.map((item) => (
                     <Link key={item.label} to={item.path} className="block">
                         <button className="w-full h-10 rounded-full bg-[var(--primary-color)] hover:bg-black duration-300 text-white text-xs font-bold flex items-center justify-between px-5">
@@ -48,6 +48,8 @@ export default function StartS() {
                     </Link>
                 ))}
             </div>
+
+            <img src="/assets/bg-start.png" className="absolute w-100 -bottom-30 -left-30 z-99 rotate-30" alt="" />
 
             {/* Bottom Wave */}
             <img

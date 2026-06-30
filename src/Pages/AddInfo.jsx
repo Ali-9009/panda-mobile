@@ -46,12 +46,13 @@ export default function Info() {
                 </div>
             </section>
 
-            {/* Fixed Footer */}
-            <div className="shrink-0 bg-white border-t border-gray-100 px-6 py-4">
-                <div className="max-w-[300px] mx-auto grid grid-cols-2 gap-3">
+            <img src="/assets/bg-img-2.png" className="w-90 mx-auto mb-30" alt="" />
+
+            <div className="fixed bottom-0 left-1/2 z-60 w-full max-w-xl -translate-x-1/2 bg-black py-4">
+                <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                     <button
                         onClick={() => window.history.back()}
-                        className="h-10 rounded-full border border-black px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                        className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Back
@@ -59,13 +60,12 @@ export default function Info() {
 
                     <Link
                         to="/term"
-                        className="h-10 rounded-full bg-[var(--primary-color)] text-white text-xs font-semibold flex items-center justify-center"
+                        className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                     >
                         Next
                     </Link>
                 </div>
             </div>
-
         </main>
     );
 }

@@ -21,7 +21,7 @@ export default function Review() {
                 </div>
             </header>
 
-            <section className="flex-1 overflow-y-auto px-6 py-8">
+            <section className="flex-1 overflow-y-auto px-6 pt-8 pb-20">
                 <h1 className="text-center text-2xl mb-8">
                     Review <span className="font-bold">Your Purchase</span>
                 </h1>
@@ -111,12 +111,11 @@ export default function Review() {
                 </div>
             </section>
 
-            <div className="w-full max-w-[300px] mx-auto py-4">
-
-                <div className="grid grid-cols-2 gap-3 mt-4">
+            <div className="fixed bottom-0 left-1/2 z-60 w-full max-w-xl -translate-x-1/2 bg-black py-4">
+                <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                     <button
                         onClick={() => window.history.back()}
-                        className="h-10 rounded-full border border-black px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                        className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Back
@@ -124,7 +123,7 @@ export default function Review() {
 
                     <Link
                         to="/request"
-                        className="h-10 rounded-full bg-[var(--primary-color)] text-white text-xs font-semibold flex items-center justify-center"
+                        className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                     >
                         Confirm
                     </Link>

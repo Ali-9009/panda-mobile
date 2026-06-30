@@ -108,12 +108,11 @@ export default function Plan() {
                 </div>
 
                 {/* Bottom Actions */}
-                <div className="w-full max-w-[300px] mx-auto py-4">
-
-                    <div className="grid grid-cols-2 gap-3 mt-4">
+                <div className="mt-auto w-full bg-black py-4">
+                    <div className="mx-auto max-w-75 grid grid-cols-2 gap-3 px-4">
                         <button
                             onClick={() => window.history.back()}
-                            className="h-10 rounded-full border border-black px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                            className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back
@@ -121,7 +120,7 @@ export default function Plan() {
 
                         <Link
                             to="/information"
-                            className="h-10 rounded-full bg-[var(--primary-color)] text-white text-xs font-semibold flex items-center justify-center"
+                            className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                         >
                             Next
                         </Link>
