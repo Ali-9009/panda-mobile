@@ -116,15 +116,15 @@ export default function Info() {
             <img
                 src="/assets/bg-ele.png"
                 alt=""
-                className="pointer-events-none fixed -bottom-16 left-1/2 z-10 w-[520px] max-w-xl -translate-x-1/2"
+                className="pointer-events-none fixed -bottom-16 left-1/2 z-10 w-130 max-w-xl -translate-x-1/2"
             />
 
             {/* Fixed Footer */}
             <div className="fixed bottom-0 left-1/2 z-40 w-full max-w-xl -translate-x-1/2 bg-black px-6 py-4">
-                <div className="mx-auto grid max-w-[300px] grid-cols-2 gap-3">
+                <div className="mx-auto grid max-w-75 grid-cols-2 gap-3">
                     <button
                         onClick={() => window.history.back()}
-                        className="flex h-10 items-center justify-center gap-2 rounded-full border border-white px-4 text-xs font-semibold text-white"
+                        className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white px-4 text-xs font-semibold text-white"
                     >
                         <ArrowLeft className="h-4 w-4" />
                         Back
@@ -132,7 +132,7 @@ export default function Info() {
 
                     <Link
                         to="/term"
-                        className="flex h-10 items-center justify-center rounded-full bg-[var(--primary-color)] text-xs font-semibold text-white"
+                        className="flex h-10 items-center justify-center rounded-xl bg-(--primary-color) text-xs font-semibold text-white"
                     >
                         Next
                     </Link>

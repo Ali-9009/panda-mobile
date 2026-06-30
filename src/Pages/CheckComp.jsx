@@ -57,7 +57,7 @@ export default function CheckComp() {
                     <button
                         type="button"
                         onClick={() => setShowSuccess(true)}
-                        className="h-11 w-full rounded-full bg-(--primary-color) text-xs font-semibold text-white transition-colors hover:bg-(--secondary-color)"
+                        className="h-11 w-full rounded-xl bg-(--primary-color) text-xs font-semibold text-white transition-colors hover:bg-(--secondary-color)"
                     >
                         CHECK COMPATIBILITY
                     </button>
@@ -77,7 +77,7 @@ export default function CheckComp() {
                     <button
                         type="button"
                         onClick={() => window.history.back()}
-                        className="flex h-10 items-center justify-center gap-2 rounded-full border border-white px-4 text-xs font-semibold text-white"
+                        className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white px-4 text-xs font-semibold text-white"
                     >
                         <ArrowLeft className="h-4 w-4" />
                         Back
@@ -85,7 +85,7 @@ export default function CheckComp() {
 
                     <Link
                         to="/plan"
-                        className="flex h-10 items-center justify-center rounded-full bg-(--primary-color) text-xs font-semibold text-white"
+                        className="flex h-10 items-center justify-center rounded-xl bg-(--primary-color) text-xs font-semibold text-white"
                     >
                         Skip
                     </Link>
@@ -121,7 +121,7 @@ export default function CheckComp() {
                         <button
                             type="button"
                             onClick={() => setShowSuccess(false)}
-                            className="mt-8 w-full rounded-full bg-(--primary-color) px-4 py-3 text-sm font-semibold text-white hover:bg-(--secondary-color)"
+                            className="mt-8 w-full rounded-xl bg-(--primary-color) px-4 py-3 text-sm font-semibold text-white hover:bg-(--secondary-color)"
                         >
                             CLOSE
                         </button>

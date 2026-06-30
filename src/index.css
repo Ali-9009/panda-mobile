@@ -66,3 +66,17 @@ html, body {
   scrollbar-width: thin;
   scrollbar-color: #fdc40c #f3f4f6;
 }
+
+
+.recharge-swiper .swiper-pagination-bullet {
+  background: #000;
+}
+
+.recharge-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+
+
+
+

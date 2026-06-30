@@ -82,7 +82,7 @@ export default function Info() {
                 <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                     <button
                         onClick={() => window.history.back()}
-                        className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                        className="h-10 rounded-xl border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Back
@@ -90,7 +90,7 @@ export default function Info() {
 
                     <Link
                         to="/review"
-                        className="h-10 rounded-full bg-[var(--primary-color)] text-white text-xs font-semibold flex items-center justify-center"
+                        className="h-10 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                     >
                         Next
                     </Link>

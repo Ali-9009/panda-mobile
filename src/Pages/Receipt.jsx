@@ -67,15 +67,15 @@ export default function Receipt() {
                     </Link>
                 </button>
 
-                <button className="flex-1 h-10 rounded-full bg-(--primary-color) text-white text-xs font-bold">
+                <button className="flex-1 h-10 rounded-xl bg-(--primary-color) text-white text-xs font-bold">
                     PRINT
                 </button>
 
-                <button className="flex-1 h-10 rounded-full bg-(--primary-color) text-white text-xs font-bold">
+                <button className="flex-1 h-10 rounded-xl bg-(--primary-color) text-white text-xs font-bold">
                     EMAIL
                 </button>
 
-                <button className="flex-1 h-10 rounded-full bg-(--primary-color) text-white text-xs font-bold">
+                <button className="flex-1 h-10 rounded-xl bg-(--primary-color) text-white text-xs font-bold">
                     TEXT 
                 </button>
             </div>

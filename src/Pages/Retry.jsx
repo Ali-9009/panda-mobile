@@ -17,7 +17,7 @@ export default function Retry() {
 
                 <Link
                     to="/receipt"
-                    className="mt-4 px-6 h-9 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
+                    className="mt-4 px-6 h-9 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                 >
                     RETRY
                 </Link>

@@ -3,7 +3,7 @@ import { ArrowLeft, ShoppingBagIcon } from "lucide-react";
 import LanguageSelector from "../components/LanguageSelector";
 import { Link } from "react-router-dom";
 
-export default function Plan() {
+export default function Recharge() {
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [activeTab, setActiveTab] = useState("Local");
 
@@ -48,29 +48,8 @@ export default function Plan() {
 
             <section className="flex-1 flex flex-col px-6 min-h-0">
                 <h1 className="mt-14 text-2xl font-semibold text-center">
-                    Refill Flow
+                    Select Desired Plan
                 </h1>
-
-                <div className="text-center mt-2">
-                    <p className="text-xl">Select</p>
-                    <h2 className="text-2xl font-bold">Desired Plan</h2>
-                </div>
-
-                {/* Tabs */}
-                <div className="mt-8 mx-auto flex rounded overflow-hidden border border-gray-200">
-                    {["Local", "Regional", "Global"].map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`w-24 h-8 text-xs ${activeTab === tab
-                                ? "bg-(--primary-color) text-white"
-                                : "bg-white text-black"
-                                }`}
-                        >
-                            {tab}
-                        </button>
-                    ))}
-                </div>
 
                 {/* Scrollable Plans */}
                 <div className="mt-8 flex-1 overflow-y-auto pb-4">
@@ -107,20 +86,23 @@ export default function Plan() {
                     </div>
                 </div>
 
+                <img src="/assets/bg-img.png" className=" w-30 mb-20" alt="" />
+
                 {/* Bottom Actions */}
-                <div className="mt-auto w-full bg-black py-4">
-                    <div className="mx-auto max-w-75 grid grid-cols-2 gap-3 px-4">
+                <div className="fixed bottom-0 left-1/2 z-60 w-full max-w-xl -translate-x-1/2 bg-black py-4">
+
+                    <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                         <button
                             onClick={() => window.history.back()}
-                            className="h-10 rounded-xl border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                            className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back
                         </button>
 
                         <Link
-                            to="/information"
-                            className="h-10 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
+                            to="/add-information"
+                            className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                         >
                             Next
                         </Link>

@@ -1,37 +1,69 @@
 import { useState } from "react";
-import { ArrowLeft, ShoppingBagIcon } from "lucide-react";
-import LanguageSelector from "../components/LanguageSelector";
+import { ArrowLeft, Check, ShoppingBagIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import LanguageSelector from "../components/LanguageSelector";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Recharge() {
     const [selectedPlan, setSelectedPlan] = useState(null);
-    const [activeTab, setActiveTab] = useState("Local");
 
-    const plans = {
-        Local: [
-            "Unlimited Saver",
-            "Unlimited Saver",
-            "Unlimited Saver",
-            "Unlimited Saver",
-        ],
-        Regional: [
-            "Regional Basic",
-            "Regional Plus",
-            "Regional Max",
-            "Regional Unlimited",
-        ],
-        Global: [
-            "Global Starter",
-            "Global Plus",
-            "Global Pro",
-            "Global Unlimited",
-        ],
-    };
+    const plans = [
+        {
+            title: "Unlimited Plus",
+            oldPrice: "$45.00/mo",
+            price: "$16.33",
+            badge: "$49 for 3 months • Save $86",
+            border: true,
+            features: [
+                "Unlimited Data",
+                "30GB Premium 5G Data",
+                "Extra 5GB Promotional Data",
+                "OnePool™ shared data across U.S. & China",
+                "Unlimited US Calls & Texts",
+                "Free International Calls & Texts to 229+ Countries",
+            ],
+        },
+        {
+            title: "Unlimited Plan",
+            oldPrice: "$35.00/mo",
+            price: "$13.00",
+            badge: "$39 for 3 Months • Save $66",
+            border: true,
+            features: [
+                "Unlimited Data",
+                "15GB Premium 5G Data",
+                "Extra 5GB Promotional Data",
+                "OnePool™ shared data across U.S. & China",
+                "Unlimited US calls & texts",
+                "Free international calls & texts to 229+ countries",
+            ],
+        },
+        {
+            title: "Starter",
+            price: "$25.00",
+            features: [
+                "6GB of 5G data",
+                "Unlimited US talk & text",
+                "Free Unlimited calls and texts to China and 229+ countries",
+            ],
+        },
+        {
+            title: "Lite",
+            price: "$15.00",
+            features: [
+                "3GB of 5G data",
+                "Unlimited US talk & text",
+            ],
+        },
+    ];
 
     return (
-
-        <main className="max-w-xl mx-auto h-dvh bg-white flex flex-col">
-            <div className="w-full flex items-center justify-between px-4 border-b border-gray-100 shadow-md shadow-gray-200 py-3 z-20">
+        <main className="max-w-xl mx-auto h-dvh bg-white flex flex-col overflow-hidden">
+            <div className="w-full flex items-center justify-between px-4 border-b border-gray-100 shadow-md shadow-gray-200 py-3 shrink-0 z-20">
                 <Link to="/">
                     <img
                         src="/assets/logo.png"
@@ -46,55 +78,88 @@ export default function Recharge() {
                 </div>
             </div>
 
-            <section className="flex-1 flex flex-col px-6 min-h-0">
-                <h1 className="mt-14 text-2xl font-semibold text-center">
+            <section className="flex-1 min-h-0 flex flex-col px-4 pt-8 pb-24 overflow-hidden">
+                <h1 className="text-2xl font-semibold text-center shrink-0">
                     Select Desired Plan
                 </h1>
 
-                {/* Scrollable Plans */}
-                <div className="mt-8 flex-1 overflow-y-auto pb-4">
-                    <div className="grid grid-cols-2 gap-4">
-                        {plans[activeTab].map((name, index) => (
-                            <div
-                                key={index}
-                                className="rounded-md border border-gray-300 bg-white shadow-lg px-3 py-4 text-center"
-                            >
-                                <div className="text-(--primary-color) font-bold">
-                                    <span className="align-top text-sm">$</span>
-                                    <span className="text-4xl">35</span>
-                                    <span className="text-xs">/mo</span>
+                <div className="mt-6 flex-1 min-h-0 overflow-y-auto overflow-x-hidden pb-6">
+                    <Swiper
+                        spaceBetween={14}
+                        slidesPerView={1.05}
+                        className="recharge-swiper"
+                    >
+                        {plans.map((plan, index) => (
+                            <SwiperSlide key={index} className="h-auto! pb-10">
+                                <div className="pt-4 overflow-visible">
+                                    <div
+                                        className={`relative overflow-visible min-h-140 rounded-2xl bg-white px-4 pt-9 pb-24 shadow-sm border ${plan.border ? "border-(--primary-color)" : "border-gray-200"
+                                            }`}
+                                    >
+                                        {plan.badge && (
+                                            <div className="absolute z-20 -top-4 left-3 right-3 rounded-full bg-(--primary-color) py-2 text-center text-xs font-bold text-black">
+                                                {plan.badge}
+                                            </div>
+                                        )}
+
+                                        <h2 className="text-center text-lg font-medium text-red-500">
+                                            {plan.title}
+                                        </h2>
+
+                                        {plan.oldPrice && (
+                                            <p className="mt-2 text-center text-2xl font-semibold text-gray-400 line-through">
+                                                {plan.oldPrice}
+                                            </p>
+                                        )}
+
+                                        <div className="mt-4 flex items-end justify-center gap-1">
+                                            <span className="text-4xl font-semibold">
+                                                {plan.price}
+                                            </span>
+                                            <span className="mb-1 text-lg font-bold">/mo</span>
+                                        </div>
+
+                                        <button
+                                            onClick={() => setSelectedPlan(plan)}
+                                            className="mt-6 h-11 w-full rounded-lg bg-(--primary-color) text-sm font-bold text-black"
+                                        >
+                                            Get the Plan
+                                        </button>
+
+                                        <div className="my-5 h-px bg-gray-200" />
+
+                                        <div className="space-y-4">
+                                            {plan.features.map((feature, i) => (
+                                                <div key={i} className="flex items-start gap-2">
+                                                    <Check className="mt-0.5 h-6 w-6 shrink-0 text-cyan-600" />
+                                                    <p className="text-md font-semibold leading-snug">
+                                                        {feature}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="absolute bottom-4 left-4 right-4 text-center mt-4 flex flex-col items-center justify-center gap-3">
+                                            <button className="text-xs font-bold underline">
+                                                Terms & Conditions
+                                            </button>
+
+                                            <button className="rounded-md border-2 border-black px-4 py-1.5 text-xs font-bold">
+                                                Broadband Facts
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <p className="mt-2 text-[9px] font-semibold leading-tight">
-                                    30GB/mo. at max 3 Mbps, then speeds slowed to max 1.5 Mbps.
-                                </p>
-
-                                <h3 className="mt-3 text-sm font-bold">{name}</h3>
-
-                                <button
-                                    onClick={() => setSelectedPlan(name)}
-                                    className="mt-3 rounded-full bg-(--primary-color) text-white text-[9px] font-bold px-5 py-1"
-                                >
-                                    View Details
-                                </button>
-
-                                <p className="mt-1 text-[8px]">
-                                    Taxes & fees extra
-                                </p>
-                            </div>
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </div>
 
-                <img src="/assets/bg-img.png" className=" w-30 mb-20" alt="" />
-
-                {/* Bottom Actions */}
                 <div className="fixed bottom-0 left-1/2 z-60 w-full max-w-xl -translate-x-1/2 bg-black py-4">
-
                     <div className="mx-auto grid max-w-75 grid-cols-2 gap-3 px-4">
                         <button
                             onClick={() => window.history.back()}
-                            className="h-10 rounded-full border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                            className="h-10 rounded-xl border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back
@@ -102,7 +167,7 @@ export default function Recharge() {
 
                         <Link
                             to="/add-information"
-                            className="h-10 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
+                            className="h-10 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                         >
                             Next
                         </Link>
@@ -112,62 +177,29 @@ export default function Recharge() {
 
             {selectedPlan && (
                 <div
-                    className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4"
                     onClick={() => setSelectedPlan(null)}
+                    className="fixed inset-0 z-70 flex items-end justify-center bg-black/50"
                 >
                     <div
-                        className="relative w-full max-w-[460px] rounded-lg bg-white text-center"
                         onClick={(e) => e.stopPropagation()}
+                        className="w-full max-w-xl rounded-t-3xl bg-white p-6"
                     >
-                        <div className="relative w-full max-w-[460px] rounded-lg bg-white px-6 py-8 text-center">
-                            <button
-                                onClick={() => setSelectedPlan(null)}
-                                className="absolute right-5 top-4 text-black text-xl font-bold"
-                            >
-                                ×
-                            </button>
+                        <h2 className="text-xl font-bold text-red-500">
+                            {selectedPlan.title}
+                        </h2>
 
-                            <div className="text-(--primary-color) font-bold">
-                                <span className="align-top text-xl">$</span>
-                                <span className="text-5xl">35</span>
-                                <span className="text-sm">/mo</span>
-                            </div>
+                        <p className="mt-3 text-3xl font-extrabold">
+                            {selectedPlan.price}
+                            <span className="text-base font-bold">/mo</span>
+                        </p>
 
-                            <p className="mt-2 text-[10px] text-black">
-                                Taxes & fees extra
-                            </p>
-
-                            <h2 className="mt-2 text-lg font-bold">
-                                {selectedPlan}<sup>SM</sup>
-                            </h2>
-
-                            <ul className="mt-3 text-left text-sm list-disc pl-5">
-                                <li>30GB/mo. at max 3 Mbps, then speeds slowed to max 1.5 Mbps.</li>
-                                <li>T-Mobile Level Up<sup>SM</sup></li>
-                            </ul>
-
-                            <button className="mt-2 text-left block text-xs font-bold text-blue-600 underline">
-                                Full Plan Details
-                            </button>
-
-                            <div className="border-t border-gray-300 mt-4 pt-4 text-left space-y-3 text-sm">
-                                <p>↕️ 30GB data</p>
-                                <p>🌐 Hotspot add-on available</p>
-                                <p>
-                                    🌍 Unlimited talk and text in the U.S. and unlimited text from the U.S.
-                                    to over 230 countries and territories.
-                                </p>
-                            </div>
-
-                            <div className="mt-5">
-                                <h3 className="font-bold text-xs">Broadband Labels</h3>
-                                <p className="text-[10px] text-(--primary-color) underline">
-                                    https://www.att.com/broadbandlabels/NEDPPbfacts
-                                </p>
-                            </div>
-                        </div>
+                        <button
+                            onClick={() => setSelectedPlan(null)}
+                            className="mt-6 h-11 w-full rounded-full bg-black text-white text-sm font-semibold"
+                        >
+                            Close
+                        </button>
                     </div>
-
                 </div>
             )}
         </main>

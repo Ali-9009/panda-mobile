@@ -13,7 +13,7 @@ export default function Request() {
 
                 <Link
                     to="/success"
-                    className="mt-4 px-6 h-9 rounded-full bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
+                    className="mt-4 px-6 h-9 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
                 >
                     CANCEL PAYMENT
                 </Link>
