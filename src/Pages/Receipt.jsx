@@ -41,7 +41,7 @@ export default function Receipt() {
                 </ReceiptSection>
 
                 <ReceiptSection title="Product Details">
-                    <Row label="Carrier" value="AT & T" />
+                    <Row label="Carrier" value="Panda-Mobile" />
                     <Row label="Plan" value="Panda-Mobile $35" />
                     <Row label="Activation Date" value="03-03-2026" />
                     <Row label="SIM No." value="1111100000" />
