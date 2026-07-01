@@ -26,7 +26,7 @@ export default function CheckComp() {
 
             {/* Content */}
             <section className="relative z-20 flex flex-1 flex-col items-center overflow-y-auto px-6 pb-32 pt-6 text-center">
-                <h1 className="text-2xl font-semibold">Refill Flow</h1>
+                <h1 className="text-2xl font-semibold"></h1>
 
                 <div className="mt-8">
                     <p className="text-xl">Let's Check</p>

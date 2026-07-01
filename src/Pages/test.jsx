@@ -143,7 +143,7 @@ export default function Recharge() {
 
                             <ul className="mt-3 text-left text-sm list-disc pl-5">
                                 <li>30GB/mo. at max 3 Mbps, then speeds slowed to max 1.5 Mbps.</li>
-                                <li>T-Mobile Level Up<sup>SM</sup></li>
+                                <li>Panda-Mobile Level Up<sup>SM</sup></li>
                             </ul>
 
                             <button className="mt-2 text-left block text-xs font-bold text-blue-600 underline">

@@ -25,7 +25,7 @@ export default function Info() {
             <section className="relative z-20 flex-1 overflow-y-auto px-6 pt-6 pb-40
     bg-white/10 backdrop-blur-md">
                 <h1 className="mt-14 text-center text-2xl font-semibold">
-                    Refill Flow
+
                 </h1>
 
                 <div className="mt-2 text-center">

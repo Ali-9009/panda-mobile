@@ -49,15 +49,15 @@ export default function Info() {
                             </p>
 
                             <p>
-                                • <strong>AT&T PREPAID Service</strong> Is Subject
-                                To The AT&T Consumer Service Agreement (Agreement)
+                                • <strong>Panda-Mobile PREPAID Service</strong> Is Subject
+                                To The Panda-Mobile Consumer Service Agreement (Agreement)
                                 located at att.com/ConsumerServiceAgreement.
-                                Activation and/or use of AT&T PREPAID service
+                                Activation and/or use of Panda-Mobile PREPAID service
                                 constitutes acceptance of the Agreement, which
                                 includes dispute resolution by binding arbitration.
-                                AT&T PREPAID cards and other account payments are
+                                Panda-Mobile PREPAID cards and other account payments are
                                 nontransferable and nonrefundable. See
-                                att.com/broadbandinfo for information on AT&T
+                                att.com/broadbandinfo for information on Panda-Mobile
                                 network management practices.
                             </p>
 
