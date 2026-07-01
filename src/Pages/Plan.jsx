@@ -195,26 +195,28 @@ export default function Plan() {
                     </div>
                 </div>
 
-                {/* Bottom Actions */}
-                <div className="mt-auto w-full bg-black py-4">
-                    <div className="mx-auto max-w-75 grid grid-cols-2 gap-3 px-4">
-                        <button
-                            onClick={() => window.history.back()}
-                            className="h-10 rounded-xl border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
-                        >
-                            <ArrowLeft className="w-4 h-4" />
-                            Back
-                        </button>
-
-                        <Link
-                            to="/information"
-                            className="h-10 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
-                        >
-                            Next
-                        </Link>
-                    </div>
-                </div>
+               
             </section>
+
+            {/* Bottom Actions */}
+            <div className="mt-auto w-full bg-black py-4">
+                <div className="mx-auto max-w-75 grid grid-cols-2 gap-3 px-4">
+                    <button
+                        onClick={() => window.history.back()}
+                        className="h-10 rounded-xl border border-white text-white px-4 text-xs font-semibold flex items-center justify-center gap-2"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Back
+                    </button>
+
+                    <Link
+                        to="/information"
+                        className="h-10 rounded-xl bg-(--primary-color) text-white text-xs font-semibold flex items-center justify-center"
+                    >
+                        Next
+                    </Link>
+                </div>
+            </div>
 
             {selectedPlan && (
                 <div
