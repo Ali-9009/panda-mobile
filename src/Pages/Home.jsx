@@ -6,7 +6,49 @@ import {
     ShieldCheck,
     RadioTower,
     Headset,
+    Smartphone,
+    BadgeDollarSign,
+    CreditCard,
+    ArrowRight
 } from "lucide-react";
+
+
+const services = [
+    {
+        title: "Activar un nuevo plan",
+        description: "Activa tu línea en minutos con eSIM o SIM físico.",
+        icon: Smartphone,
+        to: "/check-compatibility",
+        logos: [
+            "/assets/att.png",
+            "/assets/app-logo.png",
+            "/assets/cricket.png",
+        ],
+    },
+    {
+        title: "Recargar tu teléfono",
+        description: "Añade saldo a tu plan actual al instante.",
+        icon: BadgeDollarSign,
+        to: "/recharge",
+        logos: [
+            "/assets/simple-mobile.png",
+            "/assets/Claro.png",
+            "/assets/metro.png",
+            "/assets/cubacel.png",
+        ],
+    },
+    {
+        title: "Compra tarjetas virtuales",
+        description: "Compra tarjetas para tus servicios favoritos al instante.",
+        icon: CreditCard,
+        to: "/start-screen",
+        logos: [
+            "/assets/spotify.webp",
+            "/assets/netflix.png",
+            "/assets/hulu.webp",
+        ],
+    },
+];
 
 export default function Home() {
     return (
@@ -32,38 +74,66 @@ export default function Home() {
             <div className="flex-1 overflow-y-auto px-4 py-4">
 
                 <img
-                    src="/assets/hero-banner.png"
+                    src="/assets/b-banner-4.png"
                     alt=""
-                    className="w-full rounded-xl"
+                    className="w-full"
                 />
 
-                <div className="grid grid-cols-2 gap-3 mt-4">
-                    <Link to="/check-compatibility">
-                        <img
-                            src="/assets/b-banner-1.png"
-                            alt=""
-                            className="w-full rounded-xl"
-                        />
-                    </Link>
+                <section className="mt-4 space-y-3">
+                    {services.map((service) => {
+                        const Icon = service.icon;
 
-                    <Link to="/recharge">
-                        <img
-                            src="/assets/b-banner-2.png"
-                            alt=""
-                            className="w-full rounded-xl"
-                        />
-                    </Link>
-                </div>
+                        return (
+                            <Link
+                                key={service.title}
+                                to={service.to}
+                                className="group grid min-h-29 grid-cols-[76px_1fr_45px] items-center rounded-2xl border border-gray-200 bg-white px-3 py-3 shadow-[0_5px_16px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                            >
+                                {/* Icon */}
+                                <div className="flex h-full items-center justify-center border-r border-gray-200 pr-3">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-(--primary-color) shadow-[0_5px_8px_rgba(185,0,0,0.25)]">
+                                        <Icon
+                                            strokeWidth={1.8}
+                                            className="h-8 w-8 text-white"
+                                        />
+                                    </div>
+                                </div>
 
-                <div className="mt-4">
-                    <Link to="/start-screen">
-                        <img
-                            src="/assets/b-banner-3.png"
-                            alt=""
-                            className="w-full rounded-xl"
-                        />
-                    </Link>
-                </div>
+                                {/* Text */}
+                                <div className="min-w-0 px-4">
+                                    <h2 className="text-[16px] font-bold text-gray-950">
+                                        {service.title}
+                                    </h2>
+
+                                    <p className="mt-2 text-[11px] text-gray-600">
+                                        {service.description}
+                                    </p>
+
+                                    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                                        {service.logos.map((logo) => (
+                                            <img
+                                                key={logo}
+                                                src={logo}
+                                                alt=""
+                                                className="max-h-8 max-w-16 object-contain"
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Arrow */}
+                                <div className="flex items-center justify-center">
+                                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-(--primary-color) text-white shadow-md transition group-hover:translate-x-1">
+                                        <ArrowRight
+                                            strokeWidth={3}
+                                            className="h-5 w-5"
+                                        />
+                                    </span>
+                                </div>
+                            </Link>
+                        );
+                    })}
+                </section>
 
                 <div className="flex items-center justify-center md:gap-12 mt-5 gap-2">
                     <img src="/assets/amex.png" alt="" className="h-8" />
