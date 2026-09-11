@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 
+
 const services = [
     {
         title: "Activar un nuevo plan",
@@ -53,6 +54,8 @@ const services = [
 export default function Home() {
     return (
         <main className="max-w-xl mx-auto h-dvh overflow-hidden bg-white flex flex-col">
+
+          
 
             {/* App Header */}
             <header className="flex items-center justify-between px-4 py-3 border-b border-gray-100 shadow-md shadow-gray-200">
