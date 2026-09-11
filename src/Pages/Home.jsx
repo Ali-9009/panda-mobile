@@ -109,7 +109,7 @@ export default function Home() {
                                         {service.description}
                                     </p>
 
-                                    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                                    {/* <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
                                         {service.logos.map((logo) => (
                                             <img
                                                 key={logo}
@@ -118,7 +118,7 @@ export default function Home() {
                                                 className="max-h-8 max-w-16 object-contain"
                                             />
                                         ))}
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Arrow */}
